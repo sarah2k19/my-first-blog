@@ -9,7 +9,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'title', 'code', 'linenos', 'language', 'style', 'owner')
+        fields = ('id', 'title', 'text', 'created_date', 'published_date', 'author')
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -25,8 +25,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('url', 'id', 'author', 'text', 'owner',
-                  'title', 'code', 'linenos', 'language', 'style')
+        fields = ('id', 'title', 'text', 'created_date', 'published_date', 'author')
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
