@@ -18,8 +18,6 @@ class Post(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
     #added after REST API implementation
-    created = models.DateTimeField(auto_now_add=True)
-    title = models.CharField(max_length=100, blank=True, default='')
     code = models.TextField()
     linenos = models.BooleanField(default=False)
     language = models.CharField(choices=LANGUAGE_CHOICES, default='python', max_length=100)
