@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'rest_framework',
+    'snippets.apps.PostConfig',
 ]
 
 MIDDLEWARE = [
@@ -51,6 +53,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
+
+#adding pagination, django-rest-framework tutorial part 5
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 10
+}
+
 
 TEMPLATES = [
     {
