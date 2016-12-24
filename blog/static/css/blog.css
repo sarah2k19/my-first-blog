@@ -1,6 +1,7 @@
-h1 a {
+h1 {
     color: #FCA205;
     font-family: 'Lobster';
+    text-align: center;
 }
 
 .page-header {
@@ -19,8 +20,13 @@ h1 a {
     margin-left: 40px;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+h2, h3, h4 {
+    color: #FCA205;
+    font-family: 'Arial', cursive;
+}
+
+h2 a:hover {
+    color: grey;
 }
 
 .date {
@@ -43,9 +49,32 @@ h1, h2, h3, h4 {
 }
 
 .post {
-    margin-bottom: 70px;
+    margin-bottom: 10px;
+    width:100%;
+    padding-top:3px;
+    padding-bottom:3px;
+    background:#ffe6c1;
+    box-shadow:0px 2px 4px rgba(44,62,80,0.15);
+    border-bottom-right-radius:10px;
+    border-bottom-left-radius:10px;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
 }
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
+}
+
+.btn {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    border: 0;
+    background: transparent;
+    box-shadow:0px 0px 0px;
+}
+
+a.btn:hover {
+    background: white;
 }
