@@ -1,6 +1,12 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+    {% if user.is_authenticated %}
+        <div class="addButton">
+            <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+    {% endif %}
+
     {% for post in posts %}
         <div class="post">
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a>
@@ -8,9 +14,9 @@
                   <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
               {% endif %}
             </h2>
-            <div class="date">
-                <p><b>Last modified:</b> {{ post.published_date }}</p>
-            </div>
+          <!--  <div> -->
+                <p class="date"><b>Last modified:</b> {{ post.published_date }}</p>
+          <!--  </div> -->
         </div>
     {% endfor %}
 {% endblock %}
