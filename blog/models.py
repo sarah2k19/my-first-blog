@@ -10,7 +10,7 @@ LANGUAGE_CHOICES = sorted([(item[1][0], item[0]) for item in LEXERS])
 STYLE_CHOICES = sorted((item, item) for item in get_all_styles())
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User')
+    author = models.ForeignKey('auth.User', related_name='snippets')
     title = models.CharField(max_length=200)
     text = models.TextField()
     created_date = models.DateTimeField(
