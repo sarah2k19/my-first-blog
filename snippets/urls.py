@@ -18,10 +18,10 @@ snippet_detail = PostViewSet.as_view({
     'patch': 'partial_update',
     'delete': 'destroy'
 })
-user_list = UserViewSet.as_view({
+author_list = UserViewSet.as_view({
     'get': 'list'
 })
-user_detail = UserViewSet.as_view({
+author_detail = UserViewSet.as_view({
     'get': 'retrieve'
 })
 
@@ -31,7 +31,7 @@ urlpatterns = format_suffix_patterns([
     url(r'^api/$', api_root, name='api-root'),
     url(r'^snippets/$', snippet_list, name='snippet-list'),
     url(r'^snippets/(?P<pk>[0-9]+)/$', snippet_detail, name='snippet-detail'),
-    url(r'^author/$', user_list, name='user-list'),
+    url(r'^author/$', author_list, name='author-list'),
     url(r'^author/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
 ])
 
