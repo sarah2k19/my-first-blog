@@ -24,11 +24,12 @@ class PostViewSet(viewsets.ModelViewSet):
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly,)
 
+    #added the thing below in an attempt to
     @detail_route(renderer_classes=[renderers.StaticHTMLRenderer])
     def highlight(self, request, *args, **kwargs):
         snippet = self.get_object()
         return Response(snippet.highlighted)
-    
+
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
@@ -44,6 +45,6 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
-        'author': reverse('author-list', request=request, format=format),
+        'users': reverse('user-list', request=request, format=format),
         'snippets': reverse('snippet-list', request=request, format=format)
     })
