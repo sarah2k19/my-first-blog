@@ -18,10 +18,6 @@ class PostViewSet(viewsets.ModelViewSet):
     """
     This viewset automatically provides `list`, `create`, `retrieve`,
     `update` and `destroy` actions.
-
-    Additionally we also provide an extra `highlight` action.
-    Deleted by Shama Khalil because it was giving too many errors after
-    merging API with app.
     """
     queryset = Post.objects.all()
     serializer_class = PostSerializer
