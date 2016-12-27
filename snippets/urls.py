@@ -18,10 +18,10 @@ snippet_detail = PostViewSet.as_view({
     'patch': 'partial_update',
     'delete': 'destroy'
 })
-author_list = UserViewSet.as_view({
+user_list = UserViewSet.as_view({
     'get': 'list'
 })
-author_detail = UserViewSet.as_view({
+user_detail = UserViewSet.as_view({
     'get': 'retrieve'
 })
 
@@ -31,8 +31,8 @@ urlpatterns = format_suffix_patterns([
     url(r'^api/$', api_root, name='api-root'),
     url(r'^snippets/$', snippet_list, name='snippet-list'),
     url(r'^snippets/(?P<pk>[0-9]+)/$', snippet_detail, name='snippet-detail'),
-    url(r'^author/$', author_list, name='author-list'),
-    url(r'^author/(?P<pk>[0-9]+)/$', author_detail, name='author-detail'),
+    url(r'^users/$', user_list, name='user-list'),
+    url(r'^users/(?P<pk>[0-9]+)/$', user_detail, name='user-detail'),
 ])
 
 # Login and logout views for the browsable API
