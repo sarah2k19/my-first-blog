@@ -32,3 +32,11 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+    
+    # Adding in hopes of solving users page error
+    def save(self, *args, **kwargs):
+        """
+        Use the `pygments` library to create a highlighted HTML
+        representation of the code snippet.
+        """
+        super(Post, self).save(*args, **kwargs)
